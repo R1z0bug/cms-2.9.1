@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "github>openfun/renovate-configuration"
+  ],
+  "packageRules": [
+    {
+      "enabled": false,
+      "groupName": "ignored js dependencies",
+      "matchManagers": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "bootstrap",
+        "node-fetch",
+        "eslint"
+      ]
+    },
+    {
+      "enabled": false,
+      "groupName": "ignored python dependencies",
+      "matchManagers": [
+        "setup-cfg"
+      ],
+      "matchPackageNames": [
+        "arrow",
+        "dj-pagination",
+        "django-cms",
+        "django-parler",
+        "djangocms-file",
+        "djangocms-googlemap",
+        "djangocms-link",
+        "djangocms-picture",
+        "djangocms-text-ckeditor",
+        "djangocms-video",
+        "djangorestframework",
+        "elasticsearch",
+        "social-auth-app-django",
+        "social-auth-core[openidconnect]"
+      ]
+    }
+  ]
+}
