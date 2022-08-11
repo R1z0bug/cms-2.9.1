@@ -41,7 +41,8 @@ class CategoriesIndexer:
                     # the `kind` field of the object
                     "contexts": [{"name": "kind", "type": "category", "path": "kind"}],
                 }
-                for lang, _ in settings.LANGUAGES
+                # FIXME: FIX "IN SETTING LANGUAGES" INSTEAD OF HARD CODE
+                for lang, _ in (("vi","Vietnamese"),)
             },
             "is_meta": {"type": "boolean"},
             "kind": {"type": "keyword"},
@@ -55,7 +56,7 @@ class CategoriesIndexer:
             # We cannot use the default title field as the analysis prevents sorting on it
             **{
                 f"title_raw.{lang}": {"type": "keyword"}
-                for lang, _ in settings.LANGUAGES
+                for lang, _ in ("vi","Vietnamese"),)
             },
         },
     }
@@ -125,7 +126,7 @@ class CategoriesIndexer:
             "_op_type": action,
             "absolute_url": {
                 lang: category.extended_object.get_absolute_url(lang)
-                for lang, _ in settings.LANGUAGES
+                for lang, _ in (("vi","Vietnamese"),)
             },
             "complete": {
                 language: slice_string_for_completion(title)
